@@ -8,7 +8,7 @@ public class Task extends PIR {
     public Task(String description, DateTimeFormatter deadline){//constructor of task 
         this.description = description;
         this.deadline = deadline;
-
+        this.type = "Task";
     }
 
     public String getDescription(){

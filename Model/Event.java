@@ -10,7 +10,7 @@ public class Event extends PIR {
         this.description = description;
         this.startingTime = startingTime;
         this.alarm = alarm;
-
+        this.type = "Event";
     }
 
     public String getDescription(){

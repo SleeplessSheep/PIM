@@ -9,7 +9,7 @@ public class Contact extends PIR {
         this.name = name;
         this.address = address;
         this.mobileNumber = mobileNumber;
-        
+        this.type = "Contact";
     }
 
     public String getName(){

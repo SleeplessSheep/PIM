@@ -10,7 +10,7 @@ import View.Menu;
 public class CreateEventFactory extends CreateCommandFactory {
     private ArrayList<PIR> PIRs;
     private Menu menu;
-    public String format = "yyyy-MM-dd HH:mm";
+    private String format = "yyyy-MM-dd HH:mm";
 
     public Command create() throws Exception {
         String[] userInputs = menu.createEvent();

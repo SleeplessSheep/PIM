@@ -8,6 +8,9 @@ public class Menu {
     String mainMenu = "Personal Information Manager (PIM)-Menu" + "\n" + "Please enter command: [ Create | Modify | Delete | Export | Import | Print | Search ]";
     String listMenu = "Display module - Please enter [ All ] or the record ID for specific PIR";
     String deleteMenu = "Delete module - Please enter the record ID to delete specific PIR";
+    String modifyMenu = "Modify module - Please enter the record ID to modify specific PIR";
+    String serachMenu = "Search module - Please enter the number of criteria you want to use to search for personal information records (PIRs).\n[ type:4 | text:2 | date:1 ] e.g. 6 for type&text(4+2), 7 for all(4+2+1)"; //just like the file permissions type+text=6 all=7
+    
 
     public Menu(){
         is = new InputStreamReader(System.in);
@@ -64,7 +67,7 @@ public class Menu {
         System.out.println("Enter alarms for Event(YYYY-MM-DD HH:MM): ");
         userInputs[2] = br.readLine();
 
-        System.out.println("1:" + userInputs[0] + " 2:" + userInputs[1] + " 3:" + userInputs[2]);
+        System.out.println("[ 1:" + userInputs[0] + " 2:" + userInputs[1] + " 3:" + userInputs[2] + " ]");
         return userInputs;
     }
 
@@ -79,6 +82,40 @@ public class Menu {
         System.out.println(deleteMenu);
         String input = br.readLine();
         //check for input
+        return input;
+    }
+
+    public String displayModifyMenu() throws Exception{
+        System.out.println(modifyMenu);
+        String input = br.readLine();
+        //check for input
+        return input;
+    }
+
+    public int displaySearchMenu() throws Exception{
+        System.out.println(serachMenu);
+        String input = br.readLine();
+        int mode = Integer.parseInt(input);
+
+        //check for input
+        return mode;
+    }
+
+    public String askType() throws Exception{
+        System.out.println("Please enter the type: ");
+        String input = br.readLine();
+        return input;
+    }
+
+    public String askText() throws Exception{
+        System.out.println("Please enter the text: ");
+        String input = br.readLine();
+        return input;
+    }
+
+    public String askDate() throws Exception{
+        System.out.println("Please enter the date: ");
+        String input = br.readLine();
         return input;
     }
 

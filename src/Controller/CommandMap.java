@@ -24,10 +24,12 @@ public class CommandMap {
 			comFactories.put("Create", new CreateCommandFactory());
             comFactories.put("Print", new DisplayCommandFactory());
             comFactories.put("Delete", new DeleteCommandFactory());
-			/*comFactories.put("Modify","");
+            comFactories.put("Modify", new ModifyCommandFactory());
+            comFactories.put("Search", new SearchCommandFactory());
+			/*
 			comFactories.put("Export","");
 			comFactories.put("Import","");
-			comFactories.put("Search",""); */
+			 */
         try{
 
             switch (userEvent) {

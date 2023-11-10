@@ -10,14 +10,14 @@ public class CreateCommandFactory implements CommandFactory {
     private Menu menu;
 
     public Command create() throws Exception {
-            HashMap<String, CommandFactory> recordTpye =  new HashMap< String, CommandFactory>(); //store the recordTpye and corresponding create class
-            recordTpye.put("event",new CreateEventFactory());
-            /* recordTpye.put("contact","CreateContactFactory");
-            recordTpye.put("task","CreateTaskFactory");
-            recordTpye.put("textNote","CreatetextNoteFactory"); */
+            HashMap<String, CommandFactory> recordType =  new HashMap<String, CommandFactory>(); //store the recordTpye and corresponding create class
+                recordType.put("event", new CreateEventFactory());
+            /* recordType.put("contact","CreateContactFactory");
+            recordType.put("task","CreateTaskFactory");
+            recordType.put("textNote","CreatetextNoteFactory"); */
 
             String typeValue = menu.displayCreateMenu();
-            CommandFactory commandFactory = recordTpye.get(typeValue);
+            CommandFactory commandFactory = recordType.get(typeValue);
             //CommandFactory commandFactory = (CommandFactory) Class.forName(type).getDeclaredConstructor().newInstance();
             commandFactory.setPIR(PIRs);
             commandFactory.setMenu(menu);

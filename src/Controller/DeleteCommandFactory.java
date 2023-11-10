@@ -11,16 +11,16 @@ public class DeleteCommandFactory implements CommandFactory{
     
     public Command create() throws Exception {
         String userInput = menu.displayDeleteMenu();
-            int givenID = Integer.parseInt(userInput);
-            int ID;
-            for(int i = 0;i < PIRs.size();i++){
-                ID = PIRs.get(i).getID();
-                if(givenID == ID){
-                    Command command = new DeleteCommand(PIRs, i);
-                    return command;
-                }
+        int givenID = Integer.parseInt(userInput);
+        int ID;
+        for(int i = 0;i < PIRs.size();i++){
+            ID = PIRs.get(i).getID();
+            if(givenID == ID){
+                Command command = new DeleteCommand(PIRs, i);
+                return command;
             }
-            throw new Exception("Not such id: " + givenID);
+        }
+        throw new Exception("Not such id: " + givenID);
     }
 
     public void setPIR(ArrayList<PIR> PIRs){

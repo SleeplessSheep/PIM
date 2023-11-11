@@ -10,6 +10,14 @@ public class TextNote extends PIR {
         this.type = "TextNote";
     }
 
+    public void setNoteContent(String noteContent){
+        this.noteContent = noteContent;
+    }
+
+    public String getNoteContent(){
+        return noteContent;
+    }
+
     public String getString(){ 
         return ID + "| " + type + "| " + this.noteContent;
     }

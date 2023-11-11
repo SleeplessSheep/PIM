@@ -9,7 +9,7 @@ public class Menu {
     String listMenu = "Display module - Please enter [ All ] or the record ID for specific PIR";
     String deleteMenu = "Delete module - Please enter the record ID to delete specific PIR";
     String modifyMenu = "Modify module - Please enter the record ID to modify specific PIR";
-    String serachMenu = "Search module - Please enter the number of criteria you want to use to search for personal information records (PIRs).\n[ type:4 | text:2 | date:1 ] e.g. 6 for type&text(4+2), 7 for all(4+2+1)"; //just like the file permissions type+text=6 all=7
+    String serachMenu = "Search module - Please enter the criteria you want to use to search for personal information records (PIRs): \n[ date | text | type ] ";
     
 
     public Menu(){
@@ -51,7 +51,7 @@ public class Menu {
     }
 
     public String displayCreateMenu() throws Exception {
-        System.out.println("Enter record tpye(event|contact|task|textNote): ");
+        System.out.println("Enter record tpye[ Event | Contact | Task | TextNote ]: ");
         String type = br.readLine();
         return type;
     } 
@@ -92,17 +92,14 @@ public class Menu {
         return input;
     }
 
-    public int displaySearchMenu() throws Exception{
+    public String displaySearchMenu() throws Exception{
         System.out.println(serachMenu);
         String input = br.readLine();
-        int mode = Integer.parseInt(input);
-
-        //check for input
-        return mode;
+        return input;
     }
 
     public String askType() throws Exception{
-        System.out.println("Please enter the type: ");
+        System.out.println("Please enter the type: [ Event | Contact | Task | TextNote ]");
         String input = br.readLine();
         return input;
     }
@@ -117,6 +114,38 @@ public class Menu {
         System.out.println("Please enter the date: ");
         String input = br.readLine();
         return input;
+    }
+
+    public String askLogicConnector() throws Exception {
+        System.out.println("Please enter the logic connector: [ && | || ]");
+        String input = br.readLine();
+        return input;
+    }
+
+    public boolean askNegationIndicator() throws Exception {
+        System.out.println("Is the criteria with NegationIndicator(NOT): [ Y | N ]");
+        String input = br.readLine();
+        if(input.equals("Y")){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public String askDateLogic() throws Exception {
+        System.out.println("Please enter the date logic: [ < | > | = ]");
+        String input = br.readLine();
+        return input;
+    }
+
+    public boolean askSearchAgain() throws Exception {
+        System.out.println("Do you want to search with more criteria: [ Y | N ]");
+        String input = br.readLine();
+        if(input.equals("Y")){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }

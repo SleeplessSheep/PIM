@@ -12,10 +12,6 @@ public class ModifyEventFactory extends ModifyCommandFactory {
     private Menu menu;
     public String format = "yyyy-MM-dd HH:mm";
 
-    public ModifyEventFactory(){
-        setPIR(new ArrayList<PIR>());
-    }
-
     @Override
     public Command create() throws Exception {
             String[] userInputs = new String[3];

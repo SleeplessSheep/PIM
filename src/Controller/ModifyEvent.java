@@ -26,7 +26,6 @@ public class ModifyEvent implements Command {
     @Override
     public void execute(){
         event = (Event)PIRs.get(modifyIndex);
-        display.displayMessage("Editing: " + event.getString());
         event.setDescription(description);
         event.setStartingTime(startingTime);
         event.setAlarm(alarm);

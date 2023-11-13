@@ -34,12 +34,11 @@ public class CommandMap {
 
             switch (userEvent) {
                 case "Create":
-                case "Modify":
                 case "Delete":
                 case "Export":
                 case "Import":
                 case "Print":
-                case "Search":
+                case "Modify":
                     
                     //commandFactory = (CommandFactory) Class.forName(factory).getDeclaredConstructor().newInstance();
                     commandFactory = comFactories.get(userEvent);
@@ -47,9 +46,15 @@ public class CommandMap {
                     commandFactory.setMenu(menu);
                     command = commandFactory.create();
                     command.execute();
-                    
                     break;
-            
+                
+                case "Search":
+                    commandFactory = comFactories.get(userEvent);
+                    commandFactory.setPIR(PIRs);
+                    commandFactory.setMenu(menu);
+                    command = commandFactory.create();
+                    //SearchCommand have special logic, it execute inside the SearchCommandFactory
+                    break;
                 default:
                     break;
             }

@@ -11,10 +11,10 @@ public class CreateCommandFactory implements CommandFactory {
 
     public Command create() throws Exception {
             HashMap<String, CommandFactory> recordType =  new HashMap<String, CommandFactory>(); //store the recordTpye and corresponding create class
-                recordType.put("event", new CreateEventFactory());
-            /* recordType.put("contact","CreateContactFactory");
-            recordType.put("task","CreateTaskFactory");
-            recordType.put("textNote","CreatetextNoteFactory"); */
+                recordType.put("Event", new CreateEventFactory());
+                recordType.put("Contact",new CreateContactFactory());
+                recordType.put("Task", new CreateTaskFactory());
+                recordType.put("TextNote", new CreateTextNoteFactory());
 
             String typeValue = menu.displayCreateMenu();
             CommandFactory commandFactory = recordType.get(typeValue);

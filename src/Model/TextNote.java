@@ -19,7 +19,7 @@ public class TextNote extends PIR {
     }
 
     public String getString(){ 
-        return ID + "| " + type + "| " + this.noteContent;
+        return ID + "| " + type + "| content: " + this.noteContent;
     }
     
 }

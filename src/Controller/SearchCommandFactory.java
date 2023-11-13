@@ -70,10 +70,9 @@ public class SearchCommandFactory implements CommandFactory{
             logicConnector = menu.askLogicConnector();
             command = new LogicConnectCommand(temp1, temp2, resultList, logicConnector);
             command.execute();
+            display.displayPIRs(resultList);
         }
         
-        display.displayMessage("Final result:");
-        command = new DisplayCommand(resultList);
         return command;
     }
 

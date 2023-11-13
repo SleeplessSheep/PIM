@@ -71,6 +71,38 @@ public class Menu {
         return userInputs;
     }
 
+    public String[] createTask() throws Exception {
+        String[] userInputs = new String[2];
+        System.out.println("Enter description for Task: ");
+        userInputs[0] = br.readLine();
+
+        System.out.println("Enter deadline for Task(YYYY-MM-DD HH:MM): ");
+        userInputs[1] = br.readLine();
+
+        System.out.println("[ 1:" + userInputs[0] + " 2:" + userInputs[1] + " ]");
+        return userInputs;
+    }
+
+    public String[] createContact() throws Exception {
+        String[] userInputs = new String[3];
+        System.out.println("Enter name for Contact: ");
+        userInputs[0] = br.readLine();
+
+        System.out.println("Enter address for Contact: ");
+        userInputs[1] = br.readLine();
+
+        System.out.println("Enter mobile number for Contact: ");
+        userInputs[2] = br.readLine();
+        return userInputs;
+    }
+
+    public String createTextNote() throws Exception {
+        System.out.println("Enter text content for TextNote: ");
+        String userInput = br.readLine();
+
+        return userInput;
+    }
+
     public String displayListMenu() throws Exception{
         System.out.println(listMenu);
         String input = br.readLine();

@@ -75,6 +75,6 @@ public class LogicConnectCommand implements Command {
                 break;
         }
         display.displayMessage("After connected with " + logicConnector);
-        display.displayPIRs(resultList);
+        //display.displayPIRs(resultList);
     }
 }

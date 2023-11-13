@@ -8,14 +8,18 @@ import View.*;
 
 public class ModifyCommandFactory implements CommandFactory {
     private ArrayList<PIR> PIRs;
+    private Display display = new Display();
     private Menu menu;
     private String typeValue;
     protected int modifyIndex;
 
     @Override
     public Command create() throws Exception {
-        HashMap<String, CommandFactory> recordType =  new HashMap<String, CommandFactory>(); //store the recordTpye and corresponding create class
+        HashMap<String, ModifyCommandFactory> recordType =  new HashMap<String, ModifyCommandFactory>(); //store the recordTpye and corresponding create class
             recordType.put("Event", new ModifyEventFactory());
+            recordType.put("Contact", new ModifyContactFactory());
+            recordType.put("Task", new ModifyTaskFactory());
+            recordType.put("TextNote", new ModifyTextNoteFactory());
         
         String userInput = menu.displayModifyMenu();
         int givenID = Integer.parseInt(userInput);
@@ -24,11 +28,12 @@ public class ModifyCommandFactory implements CommandFactory {
                 ID = PIRs.get(i).getID();
                 if(givenID == ID){
                     typeValue = PIRs.get(i).getType();
-                    modifyIndex = i;
-                    CommandFactory commandFactory = recordType.get(typeValue);
+                    display.displayMessage("Editing: " + PIRs.get(i).getString());
+                    ModifyCommandFactory commandFactory = recordType.get(typeValue);
                     //CommandFactory commandFactory = (CommandFactory) Class.forName(type).getDeclaredConstructor().newInstance();
                     commandFactory.setPIR(PIRs);
                     commandFactory.setMenu(menu);
+                    commandFactory.setModifyIndex(i);
                     return commandFactory.create();
 
                 }
@@ -44,5 +49,9 @@ public class ModifyCommandFactory implements CommandFactory {
     @Override
     public void setMenu(Menu menu){
         this.menu = menu;
+    }
+
+    public void setModifyIndex(int modifyIndex){
+        this.modifyIndex = modifyIndex;
     }
 }

@@ -21,7 +21,6 @@ public class SearchText implements Command {
     }
 
     public void execute(){
-        System.out.println("---SearchText---execute()");
         String bufText;
         String bufType;
         Contact bufContact;
@@ -68,14 +67,12 @@ public class SearchText implements Command {
 
     public boolean containText(String bufText, String searchText, boolean NegationIndicator){
         if(NegationIndicator){//Not
-            System.out.println("---SearchText---Y");
             if(!(bufText.toUpperCase().contains(searchText.toUpperCase()))){
                 return true;//match [NOT contains searchText]
             }else{
                 return false;
             }
         }else { //without NOT
-            System.out.println("---SearchText---N");
             if(bufText.toUpperCase().contains(searchText.toUpperCase())){
                 return true;//match [contains searchText]
             }else{

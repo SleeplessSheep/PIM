@@ -1,34 +1,28 @@
 package Controller;
-
+import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 import Model.*;
 import View.Menu;
 
-public class ModifyEventFactory extends ModifyCommandFactory {
+public class CreateTaskFactory extends CreateCommandFactory {
     private ArrayList<PIR> PIRs;
     private Menu menu;
-    public String format = "yyyy-MM-dd HH:mm";
+    private String format = "yyyy-MM-dd HH:mm";
 
-    @Override
     public Command create() throws Exception {
-        String[] userInputs = new String[3];
-        userInputs = menu.createEvent();
+        String[] userInputs = menu.createTask();
         String description = userInputs[0];
         SimpleDateFormat formatter = new SimpleDateFormat(format);
-        Date startDate = formatter.parse(userInputs[1]);
-        Date alarmDate = formatter.parse(userInputs[2]);
-        return new ModifyEvent(PIRs, description, startDate, alarmDate, modifyIndex);
+        Date deadLine = formatter.parse(userInputs[1]);
+        return new CreateTask(PIRs, description, deadLine);
     }
 
-    @Override
     public void setPIR(ArrayList<PIR> PIRs){
         this.PIRs = PIRs;
     }
 
-    @Override
     public void setMenu(Menu menu){
         this.menu = menu;
     }

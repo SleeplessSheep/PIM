@@ -31,4 +31,9 @@ public class Task extends PIR {
     public String getString(){
         return ID + "| " + type + "| description: " + description + "| deadline: " + dateFormat.format(deadline);
     }
+
+    public String getExportData() {
+        String buf = type + "\n" + description + "\n" + dateFormat.format(deadline) + "\n";
+        return buf;
+    }
 }

@@ -22,4 +22,8 @@ public class TextNote extends PIR {
         return ID + "| " + type + "| content: " + this.noteContent;
     }
     
+    public String getExportData() {
+        String buf = type + "\n" + noteContent + "\n";
+        return buf;
+    }
 }

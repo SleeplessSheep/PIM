@@ -26,10 +26,8 @@ public class CommandMap {
             comFactories.put("Delete", new DeleteCommandFactory());
             comFactories.put("Modify", new ModifyCommandFactory());
             comFactories.put("Search", new SearchCommandFactory());
-			/*
-			comFactories.put("Export","");
-			comFactories.put("Import","");
-			 */
+			comFactories.put("Export", new ExportCommandFactory());
+			comFactories.put("Import", new ImportCommandFactory());
         try{
 
             switch (userEvent) {

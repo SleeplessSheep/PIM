@@ -41,5 +41,10 @@ public class Event extends PIR {
     public String getString(){
         return ID + "| " + type + "| description:" + description + "| starting time: " + dateFormat.format(startingTime) + "| alarm: " + dateFormat.format(alarm);
     }
+
+    public String getExportData() {
+        String buf = type + "\n" + description + "\n" + dateFormat.format(startingTime) + "\n" + dateFormat.format(alarm) + "\n";
+        return buf;
+    }
 }
 

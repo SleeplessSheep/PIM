@@ -40,4 +40,9 @@ public class Contact extends PIR {
     public String getString(){
         return ID + "| " + type + "| name: " + name + "| address: " + address + "| mobile number: " + mobileNumber;
     }
+
+    public String getExportData() {
+        String buf = type + "\n" + name + "\n" + address + "\n" + mobileNumber + "\n";
+        return buf;
+    }
 }

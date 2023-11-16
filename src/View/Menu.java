@@ -180,4 +180,16 @@ public class Menu {
         }
     }
 
+    public String askExportFileName() throws Exception {
+        System.out.println("Export Module - Enter the file name of .pim (no .pim included): ");
+        String input = br.readLine();
+        return input;
+    }
+
+    public String askImportFileName() throws Exception {
+        System.out.println("Import Module - Enter the file name of .pim (no .pim included): ");
+        String input = br.readLine();
+        return input;
+    }
+
 }

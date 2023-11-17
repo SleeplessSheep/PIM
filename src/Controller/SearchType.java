@@ -12,7 +12,7 @@ public class SearchType implements Command {
     private String searchType;
     private boolean NegationIndicator;
 
-    public SearchType(ArrayList<PIR> PIRs, ArrayList<PIR> resultList1, String searchType, boolean NegationIndicator){
+    public SearchType(ArrayList<PIR> PIRs, ArrayList<PIR> resultList1, String searchType, boolean NegationIndicator){ //constructor of SearchType
         this.PIRs = PIRs;
         this.searchType = searchType;
         this.NegationIndicator = NegationIndicator;

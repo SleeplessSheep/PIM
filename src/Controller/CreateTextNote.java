@@ -11,7 +11,7 @@ public class CreateTextNote implements Command {
     private PIR textNote;
     private ArrayList<PIR> PIRs; 
 
-    public CreateTextNote(ArrayList<PIR> PIRs, String content) {
+    public CreateTextNote(ArrayList<PIR> PIRs, String content) { //constructor of CreateTextNote
         this.PIRs = PIRs;
         this.content = content;
     }

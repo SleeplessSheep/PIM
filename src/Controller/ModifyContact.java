@@ -14,7 +14,7 @@ public class ModifyContact implements Command {
     private ArrayList<PIR> PIRs; 
     private int modifyIndex;
 
-    public ModifyContact(ArrayList<PIR> PIRs, String name, String address, int mobileNumber, int modifyIndex){
+    public ModifyContact(ArrayList<PIR> PIRs, String name, String address, int mobileNumber, int modifyIndex){ //constructor of ModifyContact
         this.PIRs = PIRs;
         this.name = name;
         this.address = address;
@@ -24,8 +24,8 @@ public class ModifyContact implements Command {
 
     @Override
     public void execute(){
-        contact = (Contact)PIRs.get(modifyIndex);
-        contact.setName(name);
+        contact = (Contact)PIRs.get(modifyIndex); //get the contact by index
+        contact.setName(name); //use set method to change the data of an Object
         contact.setAddress(address);
         contact.setMobileNumber(mobileNumber);
         String buf = "Record modified|" + contact.getString();

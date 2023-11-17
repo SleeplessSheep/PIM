@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import Model.*;
 import View.Display;
 
-public class LogicConnectCommand implements Command {
+public class LogicConnectCommand implements Command { //merge the search result with logicConnector
     private ArrayList<PIR> temp1; 
     private ArrayList<PIR> temp2;
     private ArrayList<PIR> resultList;
@@ -37,7 +37,7 @@ public class LogicConnectCommand implements Command {
                                     continue;
                                 }
                             }
-                            if (!foundFlag) {
+                            if (!foundFlag) {//not repeated
                                 resultList.add(temp2.get(j));
                             }
                         }
@@ -61,7 +61,7 @@ public class LogicConnectCommand implements Command {
                             continue;
                         }
                     }
-                    if (!foundFlag) {
+                    if (!foundFlag) {//not repeated
                         resultList.add(temp2.get(j));
                     }
                 }

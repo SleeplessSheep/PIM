@@ -14,7 +14,7 @@ public class CreateContact implements Command{
     private PIR contact;
     private ArrayList<PIR> PIRs; 
 
-    public CreateContact(ArrayList<PIR> PIRs, String name, String address, int mobileNumber){
+    public CreateContact(ArrayList<PIR> PIRs, String name, String address, int mobileNumber){ //constructor of CreateContact
         this.PIRs = PIRs;
         this.name = name;
         this.address = address;
@@ -22,8 +22,8 @@ public class CreateContact implements Command{
     }
 
     public void execute(){
-        contact = new Contact(name, address, mobileNumber);
-        PIRs.add(contact);
+        contact = new Contact(name, address, mobileNumber); //create an Object PIR
+        PIRs.add(contact); 
         String buf = "New record created|" + contact.getString();
         display.displayMessage(buf);
     }

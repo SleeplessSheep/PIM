@@ -11,7 +11,7 @@ public class CreateTaskFactory extends CreateCommandFactory {
     private Menu menu;
     private String format = "yyyy-MM-dd HH:mm";
 
-    public Command create() throws Exception {
+    public Command create() throws Exception { //get userInput to createTask then pass it to constructor
         String[] userInputs = menu.createTask();
         String description = userInputs[0];
         SimpleDateFormat formatter = new SimpleDateFormat(format);

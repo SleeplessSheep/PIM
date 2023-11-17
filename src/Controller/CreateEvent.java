@@ -14,7 +14,7 @@ public class CreateEvent implements Command{
     private PIR event;
     private ArrayList<PIR> PIRs; 
 
-    public CreateEvent(ArrayList<PIR> PIRs, String description, Date startingTime, Date alarm){
+    public CreateEvent(ArrayList<PIR> PIRs, String description, Date startingTime, Date alarm){ //constructor of CreateEvent
         this.PIRs = PIRs;
         this.description = description;
         this.alarm = alarm;
@@ -22,7 +22,7 @@ public class CreateEvent implements Command{
     }
 
     public void execute(){
-        event = new Event(description, startingTime, alarm);
+        event = new Event(description, startingTime, alarm); //create a PIR object
         PIRs.add(event);
         String buf = "New record created|" + event.getString();
         display.displayMessage(buf);

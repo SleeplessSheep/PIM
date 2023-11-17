@@ -10,8 +10,8 @@ public class ImportCommandFactory implements CommandFactory {
     private Menu menu;
 
     public Command create() throws Exception{
-        String fileName = menu.askImportFileName();
-        fileName = "..\\PIM\\pim\\" + fileName + ".pim";
+        String fileName = menu.askImportFileName(); //ask for the file name. for fileName.pim, user should input fileName
+        fileName = "..\\PIM\\pim\\" + fileName + ".pim"; //file path and file name
         Command command = new ImportCommand(PIRs, fileName);
         return command;
     }

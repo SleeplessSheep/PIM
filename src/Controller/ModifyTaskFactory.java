@@ -15,7 +15,7 @@ public class ModifyTaskFactory extends ModifyCommandFactory {
     @Override
     public Command create() throws Exception {
             String[] userInputs = new String[3];
-            userInputs = menu.createTask();
+            userInputs = menu.createTask(); //get user input
             String description = userInputs[0];
             SimpleDateFormat formatter = new SimpleDateFormat(format);
             Date deadline = formatter.parse(userInputs[1]);

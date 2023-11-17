@@ -22,15 +22,14 @@ public class ModifyCommandFactory implements CommandFactory {
             recordType.put("TextNote", new ModifyTextNoteFactory());
         
         String userInput = menu.displayModifyMenu();
-        int givenID = Integer.parseInt(userInput);
+        int givenID = Integer.parseInt(userInput); //get userInput
         int ID;
-            for(int i = 0;i < PIRs.size();i++){
+            for(int i = 0;i < PIRs.size();i++){ //find the record by ID
                 ID = PIRs.get(i).getID();
                 if(givenID == ID){
                     typeValue = PIRs.get(i).getType();
-                    display.displayMessage("Editing: " + PIRs.get(i).getString());
-                    ModifyCommandFactory commandFactory = recordType.get(typeValue);
-                    //CommandFactory commandFactory = (CommandFactory) Class.forName(type).getDeclaredConstructor().newInstance();
+                    display.displayMessage("Editing: " + PIRs.get(i).getString()); //show the record being modify
+                    ModifyCommandFactory commandFactory = recordType.get(typeValue); //call corresponding ModifyCommandFactory
                     commandFactory.setPIR(PIRs);
                     commandFactory.setMenu(menu);
                     commandFactory.setModifyIndex(i);

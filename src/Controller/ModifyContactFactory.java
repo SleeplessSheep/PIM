@@ -10,7 +10,7 @@ public class ModifyContactFactory extends ModifyCommandFactory {
 
     @Override
     public Command create() throws Exception {
-        String[] userInputs = new String[3];
+        String[] userInputs = new String[3]; //get new data of the Contact record
         userInputs = menu.createContact();
         String name = userInputs[0];
         String address = userInputs[1];

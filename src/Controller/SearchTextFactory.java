@@ -14,7 +14,6 @@ public class SearchTextFactory extends SearchCommandFactory {
         boolean NegationIndicator;
         text = menu.askText();
         NegationIndicator = menu.askNegationIndicator();
-
         return new SearchText(PIRs, resultList, text, NegationIndicator);
     }
 

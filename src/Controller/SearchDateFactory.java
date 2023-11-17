@@ -7,7 +7,7 @@ import java.util.Date;
 import Model.*;
 import View.Menu;
 
-public class SearchDateFactory extends SearchCommandFactory{
+public class SearchDateFactory extends SearchCommandFactory {
     private ArrayList<PIR> PIRs;
     private Menu menu;
     private String format = "yyyy-MM-dd HH:mm";
@@ -17,7 +17,7 @@ public class SearchDateFactory extends SearchCommandFactory{
         Date date;
         String dateLogic;
         date = formatter.parse(menu.askDate());
-        dateLogic = menu.askDateLogic();
+        dateLogic = menu.askDateLogic(); //get user input
         return new SearchDate(PIRs, resultList, date, dateLogic);
     }
 

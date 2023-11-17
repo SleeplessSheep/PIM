@@ -13,14 +13,14 @@ public class CreateTask implements Command {
     private PIR task;
     private ArrayList<PIR> PIRs; 
     
-    public CreateTask(ArrayList<PIR> PIRs, String description, Date deadline){
+    public CreateTask(ArrayList<PIR> PIRs, String description, Date deadline){ //constructor of CreateTask
         this.PIRs = PIRs;
         this.description = description;
         this.deadline = deadline;
     }
 
     public void execute(){
-        task = new Task(description, deadline);
+        task = new Task(description, deadline); //create Object PIR
         PIRs.add(task);
         String buf = "New record created|" + task.getString();
         display.displayMessage(buf);

@@ -8,7 +8,7 @@ public abstract class PIR { //PIR stand for Personal Information Record
     protected static int counter = 0;
     protected int ID;
     public abstract String getString(); //return the info of the record as String in certain format
-    public abstract String getExportData();
+    public abstract String getExportData(); //return the data for ExportData to a file
     public String getType(){//return the type
         return this.type;
     } 

@@ -14,7 +14,7 @@ public class ModifyTask implements Command {
     private ArrayList<PIR> PIRs; 
     private int modifyIndex;
 
-    public ModifyTask(ArrayList<PIR> PIRs, String description, Date deadline, int modifyIndex) {
+    public ModifyTask(ArrayList<PIR> PIRs, String description, Date deadline, int modifyIndex) { //construct of ModifyTask
         this.PIRs = PIRs;
         this.description = description;
         this.deadline = deadline;
@@ -23,8 +23,8 @@ public class ModifyTask implements Command {
 
     @Override
     public void execute(){
-        task = (Task)PIRs.get(modifyIndex);
-        task.setDescription(description);
+        task = (Task)PIRs.get(modifyIndex); //get the task from PIRs using Index
+        task.setDescription(description); //update the data using set method
         task.setDeadline(deadline);
         String buf = "Record modified|" + task.getString();
         display.displayMessage(buf);

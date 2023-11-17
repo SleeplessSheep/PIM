@@ -16,12 +16,11 @@ public class CreateCommandFactory implements CommandFactory {
                 recordType.put("Task", new CreateTaskFactory());
                 recordType.put("TextNote", new CreateTextNoteFactory());
 
-            String typeValue = menu.displayCreateMenu();
-            CommandFactory commandFactory = recordType.get(typeValue);
-            //CommandFactory commandFactory = (CommandFactory) Class.forName(type).getDeclaredConstructor().newInstance();
+            String typeValue = menu.displayCreateMenu(); //get the type of PIR from user input
+            CommandFactory commandFactory = recordType.get(typeValue); //find it from the map
             commandFactory.setPIR(PIRs);
             commandFactory.setMenu(menu);
-            return commandFactory.create();
+            return commandFactory.create(); //call corresponding create CommandFactory
         
     }
 

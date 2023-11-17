@@ -12,7 +12,7 @@ public class CreateEventFactory extends CreateCommandFactory {
     private Menu menu;
     private String format = "yyyy-MM-dd HH:mm";
 
-    public Command create() throws Exception {
+    public Command create() throws Exception { //get user input for createEvent then pass it to createEvent constructor
         String[] userInputs = menu.createEvent();
         String description = userInputs[0];
         SimpleDateFormat formatter = new SimpleDateFormat(format);

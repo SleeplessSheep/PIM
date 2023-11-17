@@ -15,7 +15,7 @@ public class ModifyEventFactory extends ModifyCommandFactory {
     @Override
     public Command create() throws Exception {
         String[] userInputs = new String[3];
-        userInputs = menu.createEvent();
+        userInputs = menu.createEvent(); //get new data from userInput
         String description = userInputs[0];
         SimpleDateFormat formatter = new SimpleDateFormat(format);
         Date startDate = formatter.parse(userInputs[1]);

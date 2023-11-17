@@ -11,13 +11,13 @@ public class CommandMap {
     ArrayList<PIR> PIRs = new ArrayList<PIR>();
     Menu menu;
 
-
+    //PIRs is the List of the personal information records, and menu hold the Input Stream to get user input
     public CommandMap(ArrayList<PIR> PIRs, Menu menu){
         this.PIRs = PIRs;
         this.menu = menu;
     }
 
-    public void mapToCommand(String userEvent) throws Exception {
+    public void mapToCommand(String userEvent) throws Exception {//call corresponding commandFactory if the user input match any
         CommandFactory commandFactory;
 		Command command;
         HashMap<String, CommandFactory> comFactories =  new HashMap< String, CommandFactory>();
@@ -37,8 +37,6 @@ public class CommandMap {
                 case "Import":
                 case "Print":
                 case "Modify":
-                    
-                    //commandFactory = (CommandFactory) Class.forName(factory).getDeclaredConstructor().newInstance();
                     commandFactory = comFactories.get(userEvent);
                     commandFactory.setPIR(PIRs);
                     commandFactory.setMenu(menu);
@@ -51,7 +49,6 @@ public class CommandMap {
                     commandFactory.setPIR(PIRs);
                     commandFactory.setMenu(menu);
                     command = commandFactory.create();
-                    //SearchCommand have special logic, it execute inside the SearchCommandFactory
                     break;
                 default:
                     break;

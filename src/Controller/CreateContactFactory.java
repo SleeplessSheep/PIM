@@ -8,7 +8,7 @@ public class CreateContactFactory extends CreateCommandFactory {
     private ArrayList<PIR> PIRs;
     private Menu menu;
 
-    public Command create() throws Exception {
+    public Command create() throws Exception { //get user input for createContact and pass it to Command CreateContact
         String[] userInputs = menu.createContact();
         String name = userInputs[0];
         String address = userInputs[1];

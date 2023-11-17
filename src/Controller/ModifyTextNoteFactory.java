@@ -12,8 +12,8 @@ public class ModifyTextNoteFactory extends ModifyCommandFactory {
     private Menu menu;
 
     @Override
-    public Command create() throws Exception {
-        String userInputs = menu.createTextNote();
+    public Command create() throws Exception { 
+        String userInputs = menu.createTextNote(); //get user input
         return new ModifyTextNote(PIRs, userInputs, modifyIndex);
     }
 

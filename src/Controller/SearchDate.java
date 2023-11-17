@@ -9,7 +9,6 @@ import View.Display;
 public class SearchDate implements Command{
     private ArrayList<PIR> PIRs; //origin ArrayList<PIR> PIRs or ArrayList<PIR> resultList from the last time searching
     private ArrayList<PIR> resultList;
-    private Display display = new Display();
     private Date searchDate;
     private String dateLogic;
 

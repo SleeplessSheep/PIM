@@ -22,7 +22,7 @@ public class SearchCommandFactory implements CommandFactory{
     
     
     public Command create() throws Exception {
-        HashMap<String, CommandFactory> searchFactory =  new HashMap<String, CommandFactory>(); //store the recordTpye and corresponding create class
+        HashMap<String, CommandFactory> searchFactory =  new HashMap<String, CommandFactory>(); //store the data type and corresponding searchFactory
                 searchFactory.put("date", new SearchDateFactory());
                 searchFactory.put("type", new SearchTypeFactory());
                 searchFactory.put("text", new SearchTextFactory());
@@ -32,7 +32,7 @@ public class SearchCommandFactory implements CommandFactory{
         
         Command command;
 
-        switch (criteria) {
+        switch (criteria) { //first attemp 
             case "type":
             case "text":
             case "date":
@@ -52,7 +52,7 @@ public class SearchCommandFactory implements CommandFactory{
 
         while(SearchAgain = menu.askSearchAgain()){ //keep search if the user type Y
             criteria = menu.displaySearchMenu();
-            switch (criteria) {
+            switch (criteria) { 
                 case "type":
                 case "text":
                 case "date":

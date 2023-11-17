@@ -22,7 +22,7 @@ public class ModifyTextNote implements Command {
     @Override
     public void execute(){
         textNote = (TextNote)PIRs.get(modifyIndex);
-        textNote.setNoteContent(content);
+        textNote.setNoteContent(content); //update data using set method
         String buf = "Record modified|" + textNote.getString();
         display.displayMessage(buf);
     }

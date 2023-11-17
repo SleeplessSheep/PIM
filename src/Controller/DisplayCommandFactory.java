@@ -10,14 +10,14 @@ public class DisplayCommandFactory implements CommandFactory{
     private Menu menu;
     
     public Command create() throws Exception {
-        String userInput = menu.displayListMenu();
+        String userInput = menu.displayListMenu(); //Ask the user what to display, it could be [ All ] and ID
         if(userInput.equals("All")){
             Command command = new DisplayCommand(PIRs);
             return command;
         }else {
             int givenID = Integer.parseInt(userInput);
             int ID;
-            for(int i = 0;i < PIRs.size();i++){
+            for(int i = 0;i < PIRs.size();i++){ //find the record index by ID
                 ID = PIRs.get(i).getID();
                 if(givenID == ID){
                     Command command = new DisplayCommand(PIRs, PIRs.get(i));

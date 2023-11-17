@@ -15,7 +15,7 @@ public class ModifyEvent implements Command {
     private ArrayList<PIR> PIRs; 
     private int modifyIndex;
 
-    public ModifyEvent(ArrayList<PIR> PIRs, String description, Date startingTime, Date alarm, int modifyIndex){
+    public ModifyEvent(ArrayList<PIR> PIRs, String description, Date startingTime, Date alarm, int modifyIndex){ //constructor of ModifyEvent
         this.PIRs = PIRs;
         this.description = description;
         this.alarm = alarm;
@@ -26,7 +26,7 @@ public class ModifyEvent implements Command {
     @Override
     public void execute(){
         event = (Event)PIRs.get(modifyIndex);
-        event.setDescription(description);
+        event.setDescription(description); //use set method to updata data
         event.setStartingTime(startingTime);
         event.setAlarm(alarm);
         String buf = "Record modified|" + event.getString();

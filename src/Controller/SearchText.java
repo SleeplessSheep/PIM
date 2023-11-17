@@ -12,7 +12,7 @@ public class SearchText implements Command {
     private String searchText;
     private boolean NegationIndicator;
 
-    public SearchText(ArrayList<PIR> PIRs, ArrayList<PIR> resultList1, String searchText, boolean NegationIndicator){
+    public SearchText(ArrayList<PIR> PIRs, ArrayList<PIR> resultList1, String searchText, boolean NegationIndicator){ //constructor of Search text
         this.PIRs = PIRs;
         this.searchText = searchText;
         this.NegationIndicator = NegationIndicator;

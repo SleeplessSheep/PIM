@@ -36,11 +36,11 @@ public class ImportCommand implements Command {
                     type = scan.nextLine();
                     System.out.println(type);
                     switch (type) {
-                        case "Event": //3 data
+                        case "Event": //3 data so read for 3 time
                             dataBuf1 = scan.nextLine();
                             dataBuf2 = scan.nextLine();
                             dataBuf3 = scan.nextLine();
-                            command = new CreateEvent(PIRs, dataBuf1, formatter.parse(dataBuf2), formatter.parse(dataBuf3));
+                            command = new CreateEvent(PIRs, dataBuf1, formatter.parse(dataBuf2), formatter.parse(dataBuf3)); //get the data and pass to construct
                             command.execute();
                             break;
                         
@@ -68,11 +68,10 @@ public class ImportCommand implements Command {
                         default:
                             break;
                     }
-                    System.out.println("1 item been created");
                 }
             }
         } catch (Exception e) {
-            // TODO: handle exception
+            System.out.println("---ImportCommand---" + e.getMessage());
         }
     }
 }

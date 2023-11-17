@@ -14,7 +14,6 @@ public class SearchTypeFactory extends SearchCommandFactory{
         boolean NegationIndicator;
         type = menu.askType();
         NegationIndicator = menu.askNegationIndicator();
-
         return new SearchType(PIRs, resultList, type, NegationIndicator);
     }
 

@@ -1,0 +1,15 @@
+# PIM
+Use of GenAI tools
+1. Which deliverable(s) and which part(s) of the deliverable(s) were prepared with the help of GenAI tools?
+For the source code: 
+Architecture, design pattern, unit test 
+Others:
+txt/md/XLS files.
+
+2. How did you use the GenAI tools?
+Architecture and Design Pattern: After completing a function (CommandFactory and Command), I used AI tools to verify whether my code aligns with the architecture and design patterns that I chose during the design phase. Based on the feedback from the AI tools, I made adjustments to the code. However, I did not use the AI-generated code directly.
+Unit Tests: I used AI tools to generate more unit tests to ensure the code runs as expected.
+Text/Markdown/XLS Files: I used AI tools to format these files and suggest improvements after writing most of the content.
+
+3. What did you do to verify/revise/improve the results produced by the tools?
+To verify, revise, and improve the results produced by the GenAI tools, I referred to information on the Internet and examples from lecture notes. I made sure to understand all the code in my implementation.

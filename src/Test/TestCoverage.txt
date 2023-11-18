@@ -1,0 +1,46 @@
+Unit test for Contact.java
+Method in Contact.java:
+Contact(String name, String address, int mobileNumber) 		Tested in ContactTest.java testConstructor()
+getName() 							Tested in ContactTest.java testSetName()
+setName(String newName)						Tested in ContactTest.java testSetName()
+getAddress()							Tested in ContactTest.java testSetAddress()
+setAddress(String newAddress)					Tested in ContactTest.java testSetAddress()
+getMobileNumber()						Tested in ContactTest.java testSetMobileNumber()
+setMobileNumber(int newMobileNumber)				Tested in ContactTest.java testSetMobileNumber()
+String getString()						Tested in ContactTest.java testGetString()
+String getExportData()						Tested in ContactTest.java testGetExportData()
+
+Unit test for Event.java
+Method in Event.java:
+Event(String description, Date startingTime, Date alarm)	Tested in EventTest.java testConstructor()
+getDescription()						Tested in EventTest.java testSetDescription()
+setDescription(String newDescription)				Tested in EventTest.java testSetDescription()
+getStartingTime()						Tested in EventTest.java testSetStartingTime()
+setStartingTime(Date startingTime)				Tested in EventTest.java testSetStartingTime()
+getAlarm()							Tested in EventTest.java testSetAlarm()
+setAlarm(Date alarm)						Tested in EventTest.java testSetAlarm()
+getString()							Tested in EventTest.java testGetString()
+getExportData()							Tested in EventTest.java testGetExportData()
+
+Unit test for Task.java
+Method in Task.java:
+Task(String description, Date deadline)				Tested in Task.java testConstructor()
+getDescription()						Tested in Task.java testSetDescription()
+setDescription(String newDescription)				Tested in Task.java testSetDescription()
+getDeadline()							Tested in Task.java testSetDeadline()
+setDeadline(Date newDeadline)					Tested in Task.java testSetDeadline()
+getString()							Tested in Task.java testGetString()
+getExportData()							Tested in Task.java testGetExportData()
+
+Unit test for TextNote.java
+Method in TextNote.java
+TextNote(String noteContent)					Tested in TextNoteTest.java testConstructor()
+setNoteContent(String noteContent)				Tested in TextNoteTest.java testSetNoteContent()
+getNoteContent()						Tested in TextNoteTest.java testSetNoteContent()
+getString()							Tested in TextNoteTest.java testGetString()
+getExportData()							Tested in TextNoteTest.java testGetExportData()
+
+Unit test for PIR.java
+(non abstract)Method in PIR.java
+getType()							
+getID()								Tested in PIRTest.java line 45

@@ -51,7 +51,7 @@ public class Menu {
     }
 
     public String displayCreateMenu() throws Exception {
-        System.out.println("Enter record tpye[ Event | Contact | Task | TextNote ]: ");
+        System.out.println("Create module - Enter record type[ Event | Contact | Task | TextNote ]: ");
         String type = br.readLine();
         return type;
     } 

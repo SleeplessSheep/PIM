@@ -1,16 +1,8 @@
 # PIM
-personal information manager 
-
-Jave version "15.0.1" 2020-10-20
-
-Setup:
-cwd: ../PIM
-javac -d build src/Model/*.java
-javac -cp build -d build src/View/*.java
-javac -cp build -d build src/Controller/*.java
-javac -cp build -d build src/*.java
-java -cp build Main
-
-OR
-
-Execute run.bat
+Source code path: ../PIM/src/
+Compiled program path: ../PIM/build/
+import and export .pim file path: ../PIM/pim/
+GenAIDeclaration file path: ../PIM/AIToolsDeclaration.txt
+Use markdown file reader to get better reading experience
+Developer Manual file path: ../PIM/DeveloperManual.md
+User Manual file path: ../PIM/UserManual.md

@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class PIRTest { //all test here should pass without any error
     @Test
-    public void testPIRsArrayList(){
+    public void testPIRsArrayList(){ //test some ArrayList operation that may use in the program
         // Create an ArrayList of PIR objects
         ArrayList<PIR> PIRs = new ArrayList<PIR>();
 
@@ -41,9 +41,9 @@ public class PIRTest { //all test here should pass without any error
         //use ID to search for Object in the ArrayList
         int ID = textNote.getID();
         int getID;
-        for(int i = 0;i < PIRs.size();i++){
-            getID = PIRs.get(i).getID();
-            if (getID == ID) {
+        for(int i = 0;i < PIRs.size();i++){ 
+            getID = PIRs.get(i).getID(); 
+            if (getID == ID) { //found
                 assertEquals(textNote, PIRs.get(i));
             }
         }

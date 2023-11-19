@@ -4,14 +4,24 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 class TaskTest { //all test here should pass without any error
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm"); //same as PIR's dateFormat
 
     @Test
-    void testConstructor() {
-        Date deadline = new Date();
+    void testConstructor() { //test Constructor of Contact with AI-generated data
+        // Get the current date and time
+        Date now = new Date();
+
+        // Create a Calendar object with the current date and time
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(now);
+
+        // Add 30 minutes to the current time for the alarm
+        calendar.add(Calendar.MINUTE, 30);
+        Date deadline = calendar.getTime();
         Task task = new Task("description", deadline);
 
         assertEquals("description", task.getDescription());
@@ -19,7 +29,7 @@ class TaskTest { //all test here should pass without any error
     }
 
     @Test
-    void testSetDescription() {
+    void testSetDescription() { //test setDescription method and use getDescription method to verify
         Task task = new Task("description", new Date());
         task.setDescription("new description");
 
@@ -27,7 +37,7 @@ class TaskTest { //all test here should pass without any error
     }
 
     @Test
-    void testSetDeadline() {
+    void testSetDeadline() { //test setDeadline method and use getDeadline method to verify
         Task task = new Task("description", new Date());
         Date newDeadline = new Date();
         task.setDeadline(newDeadline);
@@ -36,7 +46,7 @@ class TaskTest { //all test here should pass without any error
     }
 
     @Test
-    void testGetString() {
+    void testGetString() { //test getString and check is it equals to expected
         Date deadline = new Date();
         Task task = new Task("description", deadline);
 
@@ -45,7 +55,7 @@ class TaskTest { //all test here should pass without any error
     }
 
     @Test
-    void testGetExportData() {
+    void testGetExportData() { //test getExportData and check is it equals to expected
         Date deadline = new Date();
         Task task = new Task("description", deadline);
 

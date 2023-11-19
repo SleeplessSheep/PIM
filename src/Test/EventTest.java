@@ -6,6 +6,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.lang.reflect.Constructor;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -13,9 +14,9 @@ import org.junit.Test;
 
 public class EventTest { //all test here should pass without any error
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-
+    //Code that related to Calendar, are AI-generated for testing only
     @Test
-    public void testConstructor() {
+    public void testConstructor() { //test Constructor of Event with AI-generated data
 
         // Get the current date and time
         Date now = new Date();
@@ -40,7 +41,7 @@ public class EventTest { //all test here should pass without any error
     }
 
     @Test
-    public void testConstructor_false() {
+    public void testConstructor_false() { //test Constructor of Event, with wrong data in assertFalse, it should pass without error
 
         // Get the current date and time
         Date now = new Date();
@@ -65,7 +66,7 @@ public class EventTest { //all test here should pass without any error
     }
 
     @Test
-    public void testSetDescription() {
+    public void testSetDescription() { //test setDescription method and use getDescription method to verify
         Event event = new Event("description", new Date(), new Date());
         event.setDescription("new description");
 
@@ -73,7 +74,7 @@ public class EventTest { //all test here should pass without any error
     }
 
     @Test
-    public void testSetStartingTime() {
+    public void testSetStartingTime() { //test setStartingTime method and use getStartingTime method to verify
         Event event = new Event("description", new Date(), new Date());
         Date newStartingTime = new Date();
         event.setStartingTime(newStartingTime);
@@ -82,7 +83,7 @@ public class EventTest { //all test here should pass without any error
     }
 
     @Test
-    public void testSetAlarm() {
+    public void testSetAlarm() { //test setAlarm method and use getAlarm method to verify
         Event event = new Event("description", new Date(), new Date());
         Date newAlarm = new Date();
         event.setAlarm(newAlarm);
@@ -91,7 +92,7 @@ public class EventTest { //all test here should pass without any error
     }
 
     @Test
-    public void testGetString() {
+    public void testGetString() { //test getString and check is it equals to expected
         Date startingTime = new Date();
         Date alarm = new Date();
         Event event = new Event("description", startingTime, alarm);
@@ -101,7 +102,7 @@ public class EventTest { //all test here should pass without any error
     }
 
     @Test
-    public void testGetExportData() {
+    public void testGetExportData() { //test getExportData and check is it equals to expected
         Date startingTime = new Date();
         Date alarm = new Date();
         Event event = new Event("description", startingTime, alarm);

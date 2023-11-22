@@ -52,7 +52,7 @@ public class SearchText implements Command {
                         resultList.add(bufTask);
                     }
                     break;
-                case "TaskNote":
+                case "TextNote":
                     bufNote = (TextNote)PIRs.get(i);
                     if(containText(bufNote.getNoteContent(), searchText, NegationIndicator)){
                         resultList.add(bufNote);

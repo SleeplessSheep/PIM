@@ -1,3 +1,7 @@
+Personal Information Management(PIM)
+Java - CLI project
+Apply open-closed principle, factory design pattern, and Model-View-Controller (MVC) design pattern
+
 ```markdown
 # PIM - Important File Locations
 

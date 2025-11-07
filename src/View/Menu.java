@@ -38,7 +38,7 @@ public class Menu {
                         return option;
                 
                     default:
-                        System.out.println("Invaild input: " + option);
+                        System.out.println("Invalid input: " + option);
                         break;
                 }
 
